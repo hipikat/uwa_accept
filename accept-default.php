@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+<?
+
+include('default_vars.inc');
+
+if ( isset($_GET['view']) ) {
+    $view = $_GET['view'];
+    if ( $view == 'welcome' ) {
+        include('vars-welcome.inc');
+    }
+}
+
+?>
 <html id="core-rebrand" lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,21 +38,21 @@
     <meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />
 
     <!-- other items -->
-    <title>[Page Title] : [Site Title] : The University of Western Australia</title>
+    <title><?= $FOO ?> : [Site Title] : The University of Western Australia</title>
 </head>
 
 <body class="style-version-two">
     <!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
 
     <h1 id="sitehomelink"><a href="[site url]">[Site Title]</a></h1>
-    <h2 id="pagetitle">[Page Title]</h2>
+    <h2 id="pagetitle"><?= $FOO ?></h2>
 
     <a id="top"></a>
     <div id="centrecontainer" class="centrecontainer" role="main">
         <div class="contentwrapper">
             <div class="content">
                 <!-- ### START PAGE CONTENT ### -->
-                <? phpinfo(); ?>
+                <? #phpinfo(); ?>
                 <!-- ### END PAGE CONTENT ### -->
             </div>
         </div>
