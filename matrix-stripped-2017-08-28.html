@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html id="core-rebrand" lang="<!-- print('Language_Code') -->">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- the above prevents ie8 defaulting to ie7 on intranet and must be first -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="<!-- print('Language_Code') -->" />
+    <meta name="matrix-page-asset" content="<!-- print('assetid') -->" />
+    <meta name="matrix-site-asset" content="%globals_site_index_id%" />
+    <meta name="feedback-email" content="<!-- print('Site_feedback_email') -->" />
+   
+    <!-- settings for core scripts -->
+    <meta name="uwamenu.remotesitemapurl" content="<!-- print('site_link') -->/" />
+    <meta name="uwamenu.searchdomain" content="<!-- print('site_link') -->" />
+    <meta name="google.analytics.id" content="<!-- print('Google_Analytics_ID') -->" />
+    <meta name="google.tagmanager.id" content="<!-- print('Google_Tagmanager_ID') -->" />
+
+    <!-- target a single DPI. -->
+    <meta id="responsive-viewport" name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1.0, maximum-scale=2.0" />
+    
+    <!-- head early -->
+    <!-- area_multiline('Core_variables', 'declared_vars') -->
+
+    <!-- area_multiline('Site_variables', 'declared_vars') -->
+
+    <!-- area_multiline('Page_variables', 'declared_vars') -->
+    <!-- core assets -->
+    <!-- area_oneline('Core_includes') -->
+
+    <!-- design customisation themes -->
+    <!-- area_oneline('Site_css_file') -->
+    <!-- area_oneline('Page_css_file') -->
+
+    <!-- custom head includes -->
+    <!-- area_oneline('Site_head_includes') -->
+    <!-- area_oneline('Page_head_includes') -->
+            
+    <title><!-- print('asset_name') --> : <!-- print('site_name') --> : The University of Western Australia</title>
+    
+    <!-- metadata -->
+    <!-- area_oneline('Metadata') -->
+    <!-- area_oneline('Metadata_includes') -->
+    <!-- area_oneline('Matrix_head') -->
+
+    <!-- area_multiline('test', 'show_if') -->
+    <meta property="article:published_time" content="%asset_published_rfc2822%" />
+    <meta property="article:modified_time" content="%asset_updated_rfc2822% " />
+ 
+</head>
+
+<body class="%asset_metadata_Page_type_classes^replace:;: % core-<!-- print('Core_class_name') --> site-<!-- print('Site_class_name') --> <!-- print('Page_class_name') -->">
+
+
+<!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
+
+    <h2 id="sitehomelink"><a href="<!-- print('site_link') -->"><!-- print('site_name') --></a></h2>
+    <h1 id="pagetitle"><!-- print('asset_name') --></h1>
+
+    <a id="top"></a>    
+    <div id="centrecontainer" role="main">
+        <div class="contentwrapper">
+            <div class="content">
+                <!-- ########## START MAIN CONTENT ########## -->
+
+<!-- area_oneline('Body_content') -->
+
+
+                <!-- ########## END MAIN CONTENT ########## -->
+            </div><!--end .content-->
+        </div><!--end .contentwrapper-->
+    </div><!--end #centrecontainer-->
+
+    <div id="uwacore-data">
+
+        <!-- area_oneline('Custom_body_scripts_late') -->
+
+        <div id="uwacore-footer-extras">
+            <!-- area_oneline('Custom_footer_social_icons') -->
+        </div>
+
+
+        <ol id="uwacore-breadcrumbs">
+        <li><a href="http://www.uwa.edu.au">UWA Home</a></li>
+        <!-- area_oneline('Breadcrumb_parent') -->
+        <li><!-- area_multiline('Breadcrumbs', 'asset_lineage') --></li>
+        <li class="current"><!-- print('asset_short_name') --></li>
+        </ol>
+
+        <div id="uwacore-footer-pageinfo">
+            <dl class="columns-small">
+                <dt>Updated</dt>
+                <dd><!-- area_oneline('Asset_last_updated') --> (this date excludes nested assets)</dd>
+                <dt>Feedback</dt>
+                <dd><a href="mailto:<!-- print('Site_feedback_email') -->"><!-- print('Site_feedback_email') --></a>
+                </dd>
+                <dt>Content ID</dt>
+                <dd>Mysource Matrix #<!-- print('assetid') --></dd>
+            </dl>
+        </div>
+
+        <div id="uwamenu-navigation" role="navigation">
+                    
+        <!-- area_multiline('Navigation_LHS', 'menu_normal') -->
+
+        </div><!--end #uwamenu-navigation-->
+    </div><!-- end .core-data -->
+
+<!--[if lte IE 9]></div><![endif]-->
+
+</body>
+</html>

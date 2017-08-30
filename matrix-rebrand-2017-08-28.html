@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html id="core-rebrand" lang="<MySource_PRINT id_name="Site_variables" var="Language_Code" />">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- the above prevents ie8 defaulting to ie7 on intranet and must be first -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="language" content="<MySource_PRINT id_name="Site_variables" var="Language_Code" />" />
+    <meta name="matrix-page-asset" content="<MySource_PRINT id_name="__global__" var="assetid" />" />
+    <meta name="matrix-site-asset" content="%globals_site_index_id%" />
+    <meta name="feedback-email" content="<MySource_PRINT id_name="Site_variables" var="Site_feedback_email" />" />
+   
+    <!-- settings for core scripts -->
+    <meta name="uwamenu.remotesitemapurl" content="<MySource_PRINT id_name="__global__" var="site_link"  full_url="true"/>/" />
+    <meta name="uwamenu.searchdomain" content="<MySource_PRINT id_name="__global__" var="site_link"  full_url="true"/>" />
+    <meta name="google.analytics.id" content="<MySource_PRINT id_name="Site_variables" var="Google_Analytics_ID" />" />
+    <meta name="google.tagmanager.id" content="<MySource_PRINT id_name="Site_variables" var="Google_Tagmanager_ID" />" />
+
+    <!-- target a single DPI. -->
+    <meta id="responsive-viewport" name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1.0, maximum-scale=2.0" />
+    
+    <!-- head early -->
+    <MySource_AREA id_name="Core_variables" design_area="declared_vars" print="no">
+        <MySource_DECLARE name="Core_class_name" value="" type="text" description="The parent customisation class name. This is applied to the body element with core- appended to the first class." />
+    </MySource_AREA>
+
+    <MySource_AREA id_name="Site_variables" design_area="declared_vars" print="no">
+        <MySource_DECLARE name="Masthead_title" value="Pursue Impossible" type="text" description="To be removed. The site asset name is used." />
+        <MySource_DECLARE name="Site_class_name" value="" type="text" description="A unique class name for the site (a-z hypen or period ONLY), ideally the subdomain of the site. eg, weboffice for www.weboffice.uwa.edu.au. This is applied to the body tag with site- will be appended to the first class. Additional space seperated classes can also be added here." />
+        <MySource_DECLARE name="Site_feedback_email" value="" type="text" description="A contact email displayed in the footer on every page." />
+        <MySource_DECLARE name="Google_Analytics_ID" value="" type="text" description="Google Analytics ID eg UA-1933569-1 or UA-7622267-1" />
+        <MySource_DECLARE name="Google_Tagmanager_ID" value="" type="text" description="Optional. Google Tag Manager ID eg GTM-PSZPPN" />
+        <MySource_DECLARE name="Language_Code" value="en" type="text" description="ISO 639-1 Language Code. 'en' for English" />
+    </MySource_AREA>
+
+    <MySource_AREA id_name="Page_variables" design_area="declared_vars" print="no">
+        <MySource_DECLARE name="Page_class_name" value="" type="text" description="Any additional space seperated classes for the body element. eg convert-legacy. This is applied to the body tag with page- appended to the first class." />
+    </MySource_AREA>
+    <!-- core assets -->
+    <MySource_AREA id_name="Core_includes" design_area="nest_content" />
+
+    <!-- design customisation themes -->
+    <MySource_AREA id_name="Site_css_file" design_area="linked_css" />
+    <MySource_AREA id_name="Page_css_file" design_area="linked_css" />
+
+    <!-- custom head includes -->
+    <MySource_AREA id_name="Site_head_includes" design_area="nest_content" />
+    <MySource_AREA id_name="Page_head_includes" design_area="nest_content" />
+            
+    <title><MySource_PRINT id_name="__global__" var="asset_name" /> : <MySource_PRINT id_name="__global__" var="site_name" /> : The University of Western Australia</title>
+    
+    <!-- metadata -->
+    <MySource_AREA id_name="Metadata" design_area="metadata" />
+    <MySource_AREA id_name="Metadata_includes" design_area="nest_content" />
+    <MySource_AREA id_name="Matrix_head" design_area="head" />
+
+    <MySource_AREA id_name="test" design_area="show_if">
+        <MySource_SET name="condition" value="keyword_regexp"/>
+        <MySource_SET name="condition_keyword" value="asset_thumbnail_url"/>
+        <MySource_SET name="condition_keyword_match" value="\w" />
+        <MySource_THEN><meta property="og:thumbnail" content="<MySource_PRINT id_name="__global__" var="asset_thumbnail_url" />" /></MySource_THEN>
+        <MySource_ELSE><meta property="og:thumbnail" content="http://static.weboffice.uwa.edu.au/visualid/core-rebrand/img/uwacrest/uwacrest-blue.png" /></MySource_ELSE>
+    </MySource_AREA>
+    <meta property="article:published_time" content="%asset_published_rfc2822%" />
+    <meta property="article:modified_time" content="%asset_updated_rfc2822% " />
+ 
+</head>
+
+<body class="%asset_metadata_Page_type_classes^replace:;: % core-<MySource_PRINT id_name="Core_variables" var="Core_class_name" /> site-<MySource_PRINT id_name="Site_variables" var="Site_class_name" /> <MySource_PRINT id_name="Page_variables" var="Page_class_name" />">
+
+
+<!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
+
+    <h2 id="sitehomelink"><a href="<MySource_PRINT id_name="__global__" var="site_link"  full_url="true"/>"><MySource_PRINT id_name="__global__" var="site_name" /></a></h2>
+    <h1 id="pagetitle"><MySource_PRINT id_name="__global__" var="asset_name" /></h1>
+
+    <a id="top"></a>    
+    <div id="centrecontainer" role="main">
+        <div class="contentwrapper">
+            <div class="content">
+                <!-- ########## START MAIN CONTENT ########## -->
+                    
+<MySource_AREA id_name="Body_content" design_area="body" />
+
+
+                <!-- ########## END MAIN CONTENT ########## -->
+            </div><!--end .content-->
+        </div><!--end .contentwrapper-->
+    </div><!--end #centrecontainer-->
+
+    <div id="uwacore-data">
+
+        <MySource_AREA id_name="Custom_body_scripts_late" design_area="nest_content" />
+
+        <div id="uwacore-footer-extras">
+            <MySource_AREA id_name="Custom_footer_social_icons" design_area="nest_content" />
+        </div>
+
+
+        <ol id="uwacore-breadcrumbs">
+        <li><a href="http://www.uwa.edu.au">UWA Home</a></li>
+        <MySource_AREA id_name="Breadcrumb_parent" design_area="nest_content" />
+        <li><MySource_AREA id_name="Breadcrumbs" design_area="asset_lineage">
+            <MySource_SET name="levels_to_print" value="0" />
+            <MySource_SET name="prefix_with_home_link" value="true" />
+            <MySource_SET name="suffix_with_current_link" value="false" />
+            <MySource_SET name="prefix_with_divider" value="false" />
+            <MySource_SET name="suffix_with_divider" value="false" />
+            <MySource_SET name="reverse_lineage" value="false" />
+            <MySource_ASSET><a href="<MySource_PRINT var='asset_link' />"><MySource_PRINT var='asset_short_name' /></a></MySource_ASSET>
+            <MySource_DIVIDER></li><li></MySource_DIVIDER>
+        </MySource_AREA></li>
+        <li class="current"><MySource_PRINT var="asset_short_name" /></li>
+        </ol>
+
+        <div id="uwacore-footer-pageinfo">
+            <dl class="columns-small">
+                <dt>Updated</dt>
+                <dd><MySource_AREA id_name="Asset_last_updated" design_area="datetime"><MySource_SET name="format" value="l, j F, Y g:i A" /><MySource_SET name="datetime" value="updated" /></MySource_AREA> (this date excludes nested assets)</dd>
+                <dt>Feedback</dt>
+                <dd><a href="mailto:<MySource_PRINT id_name="Site_variables" var="Site_feedback_email" />"><MySource_PRINT id_name="Site_variables" var="Site_feedback_email" /></a>
+                </dd>
+                <dt>Content ID</dt>
+                <dd>Mysource Matrix #<MySource_PRINT id_name="__global__" var="assetid" /></dd>
+            </dl>
+        </div>
+
+        <div id="uwamenu-navigation" role="navigation">
+                    
+        <MySource_AREA id_name="Navigation_LHS" design_area="menu_normal">
+        <MySource_SET name="level" value="top"/>
+        <MySource_SET name="prefix_with_divider" value="false"/>
+        <MySource_SET name="suffix_with_divider" value="false"/>
+        <MySource_SET name="show_subs" value="on_current"/>
+        <MySource_SET name="settings.class.normal" value=""/>
+        <MySource_SET name="settings.class.current" value="class='pageon' "/>
+
+            <ul>
+                <MySource_ASSET>
+                <li><a <MySource_PRINT var='settings.class'/>href="<MySource_PRINT var='asset_link'/>"><MySource_PRINT var='asset_short_name'/></a>
+                    <MySource_SUB design_area="menu_normal">
+                    <MySource_SET name="settings.class.normal" value=""/>
+                    <MySource_SET name="settings.class.current" value="class='pageon' "/>
+                    <ul>
+                        <MySource_ASSET>
+                        <li ><a <MySource_PRINT var='settings.class'/> href="<MySource_PRINT var='asset_link'/>"><MySource_PRINT var='asset_short_name'/></a>
+                            <MySource_SUB design_area="menu_normal">
+                            <MySource_SET name="settings.class.normal" value=""/>
+                            <MySource_SET name="settings.class.current" value="class='pageon' "/>
+                            <ul>
+                                <MySource_ASSET>
+                                <li ><a <MySource_PRINT var='settings.class'/> href="<MySource_PRINT var='asset_link'/>"><MySource_PRINT var='asset_short_name'/></a>
+                            <MySource_SUB design_area="menu_normal">
+                            <MySource_SET name="settings.class.normal" value=""/>
+                            <MySource_SET name="settings.class.current" value="class='pageon' "/>
+                            <ul>
+                                <MySource_ASSET>
+                                <li ><a <MySource_PRINT var='settings.class'/> href="<MySource_PRINT var='asset_link'/>"><MySource_PRINT var='asset_short_name'/></a></li>
+                                </MySource_ASSET>
+                            </ul>
+                            </MySource_SUB>
+                                </li>
+                                </MySource_ASSET>
+                            </ul>
+                            </MySource_SUB>
+                        </li>
+                        </MySource_ASSET>
+                    </ul>
+                    </MySource_SUB>
+                </li>
+                </MySource_ASSET></ul>
+        </MySource_AREA>
+
+        </div><!--end #uwamenu-navigation-->
+    </div><!-- end .core-data -->
+
+<!--[if lte IE 9]></div><![endif]-->
+
+</body>
+</html>
