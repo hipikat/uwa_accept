@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <?
 
 include('default_vars.inc');
@@ -24,7 +23,6 @@ if ( isset($_GET['view']) ) {
     <!-- target a single DPI. -->
     <meta id="responsive-viewport" name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1.0, maximum-scale=2.0">
 
-<? #include('core_includes.inc'); ?>
     <!-- common libraries -->
     <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/lib/font-awesome/font-awesome.4.latest.css" />
     <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/lib/jquery/jquery-1.11.latest.js"></script>

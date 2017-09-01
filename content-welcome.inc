@@ -3,7 +3,7 @@
 <!-- Header hero -->
 <div id="header-hero-device" class="tinted">
   <div id="header-hero-device" class="hero-block text-light height-small tinted">
-    <img class="background tinted" src="images/pheme-welcome-banner.jpg">
+    <img class="background tinted" src="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/images/pheme-welcome-banner.jpg">
     <h1><?= $inner_page_title ?></h1>
     <p>Pheme is the UWA Access Management System, a place where you can set a
        password for your central university account giving you access to a
@@ -20,7 +20,7 @@
 <ul class="icon-link-blocks">
   <li>
     <a href="TODO">
-      <img src="images/icon-students.jpg" alt="" />
+      <img src="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/images/icon-students.jpg" alt="" />
       <h4>Students</h4>
       <p>You are an enrolled student. The eight-digit student number on your
          Campus Card starts with a 1 or 2.</p>
@@ -28,7 +28,7 @@
   </li>
   <li>
     <a href="TODO">
-      <img src="images/icon-staff.jpg" alt="" />
+      <img src="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/images/icon-staff.jpg" alt="" />
       <h4>Staff</h4>
       <p>You are a staff member or closely associated with the University. The
          eight-digit staff number on your Campus Card starts  with a zero.</p>
@@ -36,7 +36,7 @@
   </li>
   <li>
     <a href="TODO">
-      <img src="images/icon-visitors.jpg" alt="" />
+      <img src="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/images/icon-visitors.jpg" alt="" />
       <h4>Visitors</h4>
       <p>You are temporarily associated with the University. The five digits of
          your Person ID on your Campus Card will have 5, A, B, F, L, M, R or V
