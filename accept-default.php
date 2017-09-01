@@ -8,17 +8,23 @@ if ( isset($_GET['view']) ) {
     if ( $view == 'welcome' ) {
         include('vars-welcome.inc');
     }
+    elseif ( $view == 'sso' ) {
+        include('vars-sso.inc');
+    }
 }
 
 ?>
 <html id="core-rebrand" lang="en">
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- the above compatability tag MUST be first -->
-    <meta name="language" content="en">
+    <!-- the above prevents ie8 defaulting to ie7 on intranet and must be first -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta id="responsive-viewport" name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1.0,   maximum-scale=2.0">
+    <meta name="language" content="en">
 
+    <!-- target a single DPI. -->
+    <meta id="responsive-viewport" name="viewport" content="width=device-width, target-densitydpi=medium-dpi, initial-scale=1.0, maximum-scale=2.0">
+
+<? #include('core_includes.inc'); ?>
     <!-- common libraries -->
     <link rel="stylesheet" type="text/css" href="https://static.weboffice.uwa.edu.au/visualid/lib/font-awesome/font-awesome.4.latest.css" />
     <script type="text/javascript" src="https://static.weboffice.uwa.edu.au/visualid/lib/jquery/jquery-1.11.latest.js"></script>
@@ -32,28 +38,40 @@ if ( isset($_GET['view']) ) {
     <script type="text/javascript" src="https://static.weboffice.uwa.edu.au/visualid/core-rebrand/js/megamenu.js"></script>
 
     <!-- metadata settings -->
-    <meta name="uwamenu.remotesitemapurl" content="[https://www.url.to/sitemap]" />
-    <meta name="uwamenu.searchdomain" content="[domain.edu.au]" />
-    <meta name="google.analytics.id" content="[UA-0000000-1]" />
-    <meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />
+    <meta name="uwamenu.searchdomain" content="pheme.uwa.edu.au" />
+    <!--<meta name="uwamenu.remotesitemapurl" content="[https://www.url.to/sitemap]" />-->
+    <!--<meta name="google.analytics.id" content="[UA-0000000-1]" />-->
+    <!--<meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />-->
+
+    <!-- UWA Accept overrides -->
+    <!--<link rel="stylesheet" type="text/css" href="styles/uwa-accept.css" />-->
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/wings.css" />
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/forms.css" />
+    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/devices/forms.js"></script>
 
     <!-- other items -->
-    <title><?= $FOO ?> : [Site Title] : The University of Western Australia</title>
+    <title><?= $page_title ?> : <?= $site_title ?> : The University of Western Australia</title>
 </head>
 
 <body class="style-version-two">
     <!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
 
-    <h1 id="sitehomelink"><a href="[site url]">[Site Title]</a></h1>
-    <h2 id="pagetitle"><?= $FOO ?></h2>
+    <h1 id="sitehomelink"><a href="[site url]"><?= $site_title ?></a></h1>
+    <h2 id="pagetitle"><?= $page_title ?></h2>
 
     <a id="top"></a>
     <div id="centrecontainer" class="centrecontainer" role="main">
         <div class="contentwrapper">
             <div class="content">
-                <!-- ### START PAGE CONTENT ### -->
-                <? #phpinfo(); ?>
-                <!-- ### END PAGE CONTENT ### -->
+                <!-- ### START PAGE CONTENT ### --><?
+
+    if ( $view == 'welcome' ) {
+        include('content-welcome.inc');
+    } elseif ( $view == 'sso' ) {
+        include('content-sso.inc');
+    }
+
+              ?><!-- ### END PAGE CONTENT ### -->
             </div>
         </div>
     </div>
@@ -75,11 +93,11 @@ if ( isset($_GET['view']) ) {
         <ol id="uwacore-breadcrumbs">
             <li><a href="https://www.uwa.edu.au">UWA Home</a>
             </li>
-            <li><a href="[site url]">Site Title</a>
+            <li><a href="[site url]"><?= $site_title ?></a>
             </li>
-            <li><a href="[inner page url]">[Inner page title]</a>
+            <li><a href="<?= $inner_page_url ?>"><?= $inner_page_title ?></a>
             </li>
-            <li class="current">[Current page title]</li>
+            <li class="current"><?= $page_title ?></li>
         </ol>
 
         <!-- "this page" link in footer for technical/admin info -->
