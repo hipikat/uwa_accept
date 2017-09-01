@@ -1,2 +1,26 @@
 
+/* TODO: Patch production Rebrand Sass and empty this file out... */
 
+ul.icon-link-blocks li a h4 {
+  margin-top: 0;
+
+  /* change to $size0 in Sass */
+  margin-bottom: 6px;
+  /* as in [ul.icon-link-blocks li a], [a.icon-link-block] */
+  font-size: 20px;
+  /* change to $fontUWA in Sass */
+  font-family: "UWA Regular", "UWA", Georgia, serif;
+
+  /* add +link(0, 1, $colTextLink) in Sass, instead of... */
+  color: #0e55b5;
+}
+
+ul.icon-link-blocks li a p {
+  font-family: "Source Sans Pro", Arial, sans-serif;  /* change to $fontSans in Sass */
+  font-size: 16px;  /* change to $sizeFontRoot in Sass */
+  color: rgb(70,70,70);   /* change to $colText in Sass */
+
+  display: inline-block;
+  text-decoration: none !important;
+  margin-top: 0;
+}

@@ -2,14 +2,14 @@
 <?
 
 include('default_vars.inc');
-
 if ( isset($_GET['view']) ) {
     $view = $_GET['view'];
     if ( $view == 'welcome' ) {
         include('vars-welcome.inc');
-    }
-    elseif ( $view == 'sso' ) {
+    } elseif ( $view == 'sso' ) {
         include('vars-sso.inc');
+    } elseif ( $view == 'signout' ) {
+        include('vars-signout.inc');
     }
 }
 
@@ -26,16 +26,16 @@ if ( isset($_GET['view']) ) {
 
 <? #include('core_includes.inc'); ?>
     <!-- common libraries -->
-    <link rel="stylesheet" type="text/css" href="https://static.weboffice.uwa.edu.au/visualid/lib/font-awesome/font-awesome.4.latest.css" />
-    <script type="text/javascript" src="https://static.weboffice.uwa.edu.au/visualid/lib/jquery/jquery-1.11.latest.js"></script>
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/lib/font-awesome/font-awesome.4.latest.css" />
+    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/lib/jquery/jquery-1.11.latest.js"></script>
 
     <!-- core styles -->
-    <link rel="stylesheet" type="text/css" href="https://static.weboffice.uwa.edu.au/visualid/core-rebrand/css/uwacore.css" />
-    <link rel="stylesheet" type="text/css" href="https://static.weboffice.uwa.edu.au/visualid/core-rebrand/css/megamenu.css" />
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/uwacore.css" />
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/megamenu.css" />
 
     <!-- core scripts -->
-    <script type="text/javascript" src="https://static.weboffice.uwa.edu.au/visualid/core-rebrand/js/uwacore.js"></script>
-    <script type="text/javascript" src="https://static.weboffice.uwa.edu.au/visualid/core-rebrand/js/megamenu.js"></script>
+    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/uwacore.js"></script>
+    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/megamenu.js"></script>
 
     <!-- metadata settings -->
     <meta name="uwamenu.searchdomain" content="pheme.uwa.edu.au" />
@@ -43,25 +43,26 @@ if ( isset($_GET['view']) ) {
     <!--<meta name="google.analytics.id" content="[UA-0000000-1]" />-->
     <!--<meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />-->
 
-    <!-- UWA Accept overrides -->
-    <!--<link rel="stylesheet" type="text/css" href="styles/uwa-accept.css" />-->
+    <!-- UWA Accept style/script overrides -->
+    <link rel="stylesheet" type="text/css" href="styles/uwa-accept.css" />
     <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/wings.css" />
     <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/forms.css" />
     <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/devices/forms.js"></script>
 
     <!-- other items -->
-    <title><?= $page_title ?> : <?= $site_title ?> : The University of Western Australia</title>
+    <title><?= $inner_page_title ?> : <?= $site_title ?> : The University of Western Australia</title>
 </head>
 
-<body class="style-version-two">
+<body class="style-version-two site-uwa-accept">
     <!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
 
-    <h1 id="sitehomelink"><a href="[site url]"><?= $site_title ?></a></h1>
-    <h2 id="pagetitle"><?= $page_title ?></h2>
+    <h2 id="sitehomelink"><a href="https://www.pheme.uwa.edu.au">Pheme</a></h1>
+    <!--<h2><a href="<?= $site_url ?>"><?= $site_title ?></a></h2>-->
+    <h1 id="pagetitle"><?= $inner_page_title ?></h1>
 
     <a id="top"></a>
     <div id="centrecontainer" class="centrecontainer" role="main">
-        <div class="contentwrapper">
+        <div class="contentwrapper padding-bottom-none">
             <div class="content">
                 <!-- ### START PAGE CONTENT ### --><?
 
@@ -69,6 +70,8 @@ if ( isset($_GET['view']) ) {
         include('content-welcome.inc');
     } elseif ( $view == 'sso' ) {
         include('content-sso.inc');
+    } elseif ( $view == 'signout' ) {
+        include('content-signout.inc');
     }
 
               ?><!-- ### END PAGE CONTENT ### -->
@@ -81,57 +84,27 @@ if ( isset($_GET['view']) ) {
         <!-- optional footer social icons -->
         <div id="uwacore-footer-extras">
             <ul class="social-icons">
-                <li><a href="#" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                <li><a href="#" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                <li><a href="#" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
-                <li><a href="#" title="Instagram"><i class="fa fa-instagram"></i></a></li>
-                <li><a href="#" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+                <li><a href="https://twitter.com/uwanews" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.facebook.com/universitywa" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="http://www.linkedin.com/company/university-of-western-australia" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="http://instagram.com/universitywa" title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="http://www.youtube.com/user/universitywa" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
             </ul>
         </div>
 
         <!-- optional breadcrumb trail -->
         <ol id="uwacore-breadcrumbs">
-            <li><a href="https://www.uwa.edu.au">UWA Home</a>
-            </li>
-            <li><a href="[site url]"><?= $site_title ?></a>
-            </li>
-            <li><a href="<?= $inner_page_url ?>"><?= $inner_page_title ?></a>
-            </li>
-            <li class="current"><?= $page_title ?></li>
+            <li><a href="http://www.uwa.edu.au">UWA Home</a></li>
+            <li><a href="http://www.uwa.edu.au">UWA Home</a></li>
+            <li><a href="http://pheme.uwa.edu.au">Pheme</a></li>
+            <li class="current"><a href="<?= $inner_page_url ?>"><?= $inner_page_title ?></a></li>
         </ol>
 
-        <!-- "this page" link in footer for technical/admin info -->
-        <div id="uwacore-footer-pageinfo">
-            <dl class="columns-small">
-                <dt>Updated</dt>
-                <dd>[date]</dd>
-                <dt>Feedback</dt>
-                <dd><a href="mailto:[contact-email@uwa.edu.au]">[contact-email@uwa.edu.au]</a></a>
-                </dd>
-                <dt>Content ID</dt>
-                <dd>[Content management system, asset ID or template name]</dd>
-            </dl>
-        </div>
-
         <!-- Menu navigation links. The top level links are also added to the footer -->
-        <div id="uwamenu-navigation">
+        <div id="uwamenu-navigation" role="navigation">
             <ul>
-                <li><a href="http://...">Level 1 link</a>
-                </li>
-                <li><a href="http://...">Level 1 link</a>
-                    <ul>
-                        <li><a class="pageon" href="http://...">Level 2 link with pageon class for active page</a>
-                            <ul>
-                                <li>
-                                    <a href="http://...">Level 3 link</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="http://...">Level 2 link</a>
-                        </li>
-                    </ul>
-                </li>
+                <li<? if ( $view == 'welcome' ) { echo ' class="pageon"'; } ?>><a href="TODO">Welcome to Pheme</a></li>
+                <li<? if ( $view == 'sso' ) { echo ' class="pageon"'; } ?>><a href="TODO">Single sign-on</a></li>
             </ul>
         </div>
     </div>
