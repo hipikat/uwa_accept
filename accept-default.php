@@ -1,6 +1,8 @@
-<?
+<?php
 
 include('default_vars.inc');
+
+# The 'view' GET variable determines the page to draw
 if ( isset($_GET['view']) ) {
     $view = $_GET['view'];
     if ( $view == 'welcome' ) {
@@ -10,7 +12,24 @@ if ( isset($_GET['view']) ) {
     } elseif ( $view == 'signout' ) {
         include('vars-signout.inc');
     }
+# Default to the Welcome screen, if none is specified
+} else {
+    if ( strpos($_SERVER['REQUEST_URI'], '?') === false ) {
+        $addendum = '?view=welcome';
+    } else {
+        $addendum = '&view=welcome';
+    }
+    header('Location: ' . $_SERVER['REQUEST_URI'] . $addendum);
 }
+
+# Use local Rebrand resources (CSS, JS, et al.), if the GET variable
+# 'local_core' exists, and is truthy.
+if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
+    $core_prefix = '/rebrand';
+} else {
+    $core_prefix = '//static.weboffice.uwa.edu.au/visualid/core-rebrand';
+}
+
 
 ?>
 <html id="core-rebrand" lang="en">
@@ -28,12 +47,12 @@ if ( isset($_GET['view']) ) {
     <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/lib/jquery/jquery-1.11.latest.js"></script>
 
     <!-- core styles -->
-    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/uwacore.css" />
-    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/megamenu.css" />
+    <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/uwacore.css" />
+    <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/megamenu.css" />
 
     <!-- core scripts -->
-    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/uwacore.js"></script>
-    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/megamenu.js"></script>
+    <script type="text/javascript" src="<?= $core_prefix ?>/js/uwacore.js"></script>
+    <script type="text/javascript" src="<?= $core_prefix ?>/js/megamenu.js"></script>
 
     <!-- metadata settings -->
     <meta name="uwamenu.searchdomain" content="pheme.uwa.edu.au" />
@@ -42,10 +61,10 @@ if ( isset($_GET['view']) ) {
     <!--<meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />-->
 
     <!-- UWA Accept style/script overrides -->
-    <link rel="stylesheet" type="text/css" href="styles/uwa-accept.css" />
-    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/wings.css" />
-    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/core-rebrand/css/devices/forms.css" />
-    <script type="text/javascript" src="//static.weboffice.uwa.edu.au/visualid/core-rebrand/js/devices/forms.js"></script>
+    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/styles/uwa-accept.css" />
+    <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/wings.css" />
+    <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/forms.css" />
+    <script type="text/javascript" src="<?= $core_prefix ?>/js/devices/forms.js"></script>
 
     <!-- other items -->
     <title><?= $inner_page_title ?> : <?= $site_title ?> : The University of Western Australia</title>
