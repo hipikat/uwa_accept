@@ -28,22 +28,22 @@
 <div class="column-three-quarter">
 
 
-<div class="form-device width-full">
-  <form action="TODO" class="margin-bottom-large">
-    <h3>Sign on</h3>
-    <dl>
-      <dt>Staff, student or visitor ID:</dt>
-        <dd><input type="text" name="TODO" required />
-      <dt>Pheme password:</dt>
-        <dd><input type="text" name="TODO" required />
-      <dt class="submit"></dt>
-        <dd class="overline submit">
-          <button type="submit" id="element_14" name="element_14">Login</button>
-          <button type="reset" id="element_15" name="element_15">Forgotten your password?</button>
-        </dd>
-    </dl>
-    <input type="submit" name="ctl00$LeftCol$BtnCancel" value="Cancel" onclick="return confirm('Are you certain you want to cancel? Any changes you have made will be lost.');" id="ctl00_LeftCol_BtnCancel">
-  </form>
+<div class="width-full">
+
+
+  <?
+    if ( !isset($_GET['screen']) ) {
+      include('from-chris-dymond/inline-form.html');
+    } elseif ( $_GET['screen'] == 'activate' ) {
+      include('from-chris-dymond/activate.html');
+    } elseif ( $_GET['screen'] == 'change' ) {
+      include('from-chris-dymond/change.html');
+    } elseif ( $_GET['screen'] == 'change' ) {
+      include('from-chris-dymond/manage.html');
+    }
+  ?>
+
+
 </div>
 
 

@@ -12,6 +12,8 @@ if ( isset($_GET['view']) ) {
     } elseif ( $view == 'signout' ) {
         include('vars-signout.inc');
     }
+
+
 # Default to the Welcome screen, if none is specified
 } else {
     if ( strpos($_SERVER['REQUEST_URI'], '?') === false ) {
@@ -51,6 +53,7 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
     <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/megamenu.css" />
 
     <!-- core scripts -->
+    <!--<script type="text/javascript" src="<?= $core_prefix ?>/js/uwacore.js"></script>-->
     <script type="text/javascript" src="<?= $core_prefix ?>/js/uwacore.js"></script>
     <script type="text/javascript" src="<?= $core_prefix ?>/js/megamenu.js"></script>
 
@@ -64,13 +67,13 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
     <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/styles/uwa-accept.css" />
     <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/wings.css" />
     <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/forms.css" />
-    <script type="text/javascript" src="<?= $core_prefix ?>/js/devices/forms.js"></script>
+    <!-- <script type="text/javascript" src="<?= $core_prefix ?>/js/devices/forms.js"></script>
 
     <!-- other items -->
     <title><?= $inner_page_title ?> : <?= $site_title ?> : The University of Western Australia</title>
 </head>
 
-<body class="style-version-two site-uwa-accept">
+<body class="style-version-two site-uwa-accept preserve-forms">
     <!--[if lte IE 9]><div id="legacy-browser"><![endif]-->
 
     <h2 id="sitehomelink"><a href="https://www.pheme.uwa.edu.au">Pheme</a></h1>
@@ -89,6 +92,9 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
         include('content-sso.inc');
     } elseif ( $view == 'signout' ) {
         include('content-signout.inc');
+    } elseif ( $view == 'dotnet' ) {
+        #include('from-chris-dymond/inline-form.html');
+        include('sitecore-wrapper.inc');
     }
 
               ?><!-- ### END PAGE CONTENT ### -->
