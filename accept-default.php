@@ -64,7 +64,24 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
     <!--<meta name="google.tagmanager.id" content="[GTM-XXXXXX]" />-->
 
     <!-- UWA Accept style/script overrides -->
-    <link rel="stylesheet" type="text/css" href="//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/styles/uwa-accept.css" />
+    <script type="text/javascript" src="<?
+
+        if ( isset($_GET['local_core']) && $_GET['local_core'] ) { 
+            echo "scripts/uwa-accept.js";
+        } else {
+            echo "//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/scripts/uwa-accept.js";
+        }
+
+    ?>" ></script>
+    <link rel="stylesheet" type="text/css" href="<?
+
+        if ( isset($_GET['local_core']) && $_GET['local_core'] ) { 
+            echo "styles/uwa-accept.css";
+        } else {
+            echo "//static.weboffice.uwa.edu.au/visualid/sites/uwa_accept/styles/uwa-accept.css";
+        }
+
+    ?>" />
     <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/wings.css" />
     <link rel="stylesheet" type="text/css" href="<?= $core_prefix ?>/css/devices/forms.css" />
     <!-- <script type="text/javascript" src="<?= $core_prefix ?>/js/devices/forms.js"></script>
@@ -95,6 +112,8 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
     } elseif ( $view == 'dotnet' ) {
         #include('from-chris-dymond/inline-form.html');
         include('sitecore-wrapper.inc');
+    } else {
+        include('raw_views/' . $view . '.html');
     }
 
               ?><!-- ### END PAGE CONTENT ### -->
