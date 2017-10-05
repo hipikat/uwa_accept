@@ -39,7 +39,7 @@ table tr > *:first-child {
     padding-bottom: 18px;
 }
 table tr > *:last-child {
-    font-size: 14px;
+    font-size: 16px;
     /* vertical-align: middle; */
     /* padding-top: 18px; */
 }
@@ -48,8 +48,12 @@ table tr > *:last-child {
 
 
 
-table tr[id*="ChallengeAnswer"] td[align~="left"] {
+table tr[id*="ChallengeAnswer"] td[align~="left"],
+table tr[id*="NewPassword"] td[align~="left"] {
     padding-top: 18px;
+}
+table tr[id*="NewPassword"] td input[name*="NewPassword"] {
+    margin-bottom: 12px;
 }
 
 
@@ -64,7 +68,7 @@ table tr td span[id$="Value"] {
     /* padding-top: 12px; */
     padding-top: 0px;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -101,7 +105,7 @@ table input[id*="ctl00_LeftCol_BtnSubmit"] {
 
 div.form input[id*="Btn"] {
     color: #27348B;
-    font-size: 16px;
+    font-size: 18px;
     /* background-color: blue; */
 
     padding: 10px 8px;
@@ -157,10 +161,40 @@ div.form-device label.checkbox:before, div.form-device label.radio:before {
 
 table tr td.TableRowSplitter {
     background-color: #F6F6F6;
+    padding-top: 18px;
 }
 table tr td.TableRowSplitter .TableRowSplitterText {
     font-weight: 600;
     color: #27348b !important;
     font-size: 18px;
 }
+
+
+/* Unmodified select -> blue-backed drop-downs */
+select {
+    color: white;
+    border: 0;
+    padding: 5px 35px 5px 5px;
+    font-size: 16px;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('http://static.weboffice.uwa.edu.au/visualid/graphics/select-up-down-inverse.png') 97% 50% / 12px 14px no-repeat #27348b;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+
+/* Unmodified input 'submit' buttons -> add padding and arrow */
+
+div.form input[type="submit"] {
+    /* border: 1px solid red; */
+    padding: 10px 8px;
+}
+
+
+/* Disabled form elements */
 
