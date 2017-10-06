@@ -143,12 +143,14 @@ if ( isset($_GET['local_core']) && $_GET['local_core'] ) {
         </ol>
 
         <!-- Menu navigation links. The top level links are also added to the footer -->
+        <!--
         <div id="uwamenu-navigation" role="navigation">
             <ul>
                 <li<? if ( $view == 'welcome' ) { echo ' class="pageon"'; } ?>><a href="TODO">Welcome to Pheme</a></li>
                 <li<? if ( $view == 'sso' ) { echo ' class="pageon"'; } ?>><a href="TODO">Single sign-on</a></li>
             </ul>
         </div>
+        -->
     </div>
 
     <!--[if lte IE 9]></div><![endif]-->
