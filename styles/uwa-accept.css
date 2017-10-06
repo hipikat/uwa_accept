@@ -1,22 +1,22 @@
+/* Originally by Ada Wright, 2017-10-05 */
 
-/* TODO: Patch production Rebrand Sass and empty this file out... */
+
+/****
+ * TODO: Patch production Rebrand Sass... */
 
 ul.icon-link-blocks li a h4 {
   margin-top: 0;
 
-  /* change to $size0 in Sass */
-  margin-bottom: 6px;
-  /* as in [ul.icon-link-blocks li a], [a.icon-link-block] */
-  font-size: 20px;
-  /* change to $fontUWA in Sass */
-  font-family: "UWA Regular", "UWA", Georgia, serif;
+  margin-bottom: 6px;  /* change to $size0 in Sass */
+  font-size: 20px;  /* as in [ul.icon-link-blocks li a], [a.icon-link-block] */
+  font-family: "UWA Regular", "UWA", Georgia, serif;  /* -> $fontUWA in Sass */
 
   /* add +link(0, 1, $colTextLink) in Sass, instead of... */
   color: #0e55b5;
 }
 
 ul.icon-link-blocks li a p {
-  font-family: "Source Sans Pro", Arial, sans-serif;  /* change to $fontSans in Sass */
+  font-family: "Source Sans Pro", Arial, sans-serif;  /* -> $fontSans in Sass */
   font-size: 16px;  /* change to $sizeFontRoot in Sass */
   color: rgb(70,70,70);   /* change to $colText in Sass */
 
@@ -25,120 +25,34 @@ ul.icon-link-blocks li a p {
   margin-top: 0;
 }
 
+/****
+ * Start bespoke CSS for Pheme & UWA Accept;
+ * Applying select Rebrand styles to (mostly) table-based forms.
+ * (Thanks, .Net.) */
+
+/* Page-level */
+
 form {
-    /* border: 1px solid red; */
     background-color: #F6F6F6;
     padding: 12px;
-    /* font-family: "Source Sans Pro", Arial, sans-serif; */
 }
-
-table tr > *:first-child {
-    font-size: 16px;
-    /* vertical-align: middle; */
-    /* padding-top: 18px; */
-    padding-bottom: 18px;
-}
-table tr > *:last-child {
-    font-size: 16px;
-    /* vertical-align: middle; */
-    /* padding-top: 18px; */
-}
-
-
-
-
-
-table tr[id*="ChallengeAnswer"] td[align~="left"],
-table tr[id*="NewPassword"] td[align~="left"] {
-    padding-top: 18px;
-}
-table tr[id*="NewPassword"] td input[name*="NewPassword"] {
-    margin-bottom: 12px;
-}
-
-
-
-
-
-table tr > td[id*="_LeftCol_"] {
-    /* padding-top: 12px; */
-    padding-top: 0px;
-}
-table tr td span[id$="Value"] {
-    /* padding-top: 12px; */
-    padding-top: 0px;
-    display: inline-block;
-    font-size: 18px;
-}
-
-
-table input[type="checkbox"] {
-    opacity: 0;
-    top: 1px;
-    left: 0;
-    width: 12px;
-    height: 18px;
-    /* position: absolute; */
-}
-
-/*
-table input[type="checkbox"]:before {
-    background-color: white;
-    border: 2px solid #dbdbdb;
-}
-*/
-table td input[type="text"] {
-    margin-bottom: 12px;
-}
-
 
 div.width-full table {
     width: 100%;
 }
+
+table tr > *:first-child {
+    font-size: 16px;
+    padding-bottom: 18px;
+}
+
+table tr > *:last-child {
+    font-size: 17.775px;
+}
+
 div.width-full table tr td:first-child {
     width: 30% !important;
 }
-
-table input[id*="ctl00_LeftCol_BtnSubmit"] {
-    color: #27348B;
-}
-
-div.form input[id*="Btn"] {
-    color: #27348B;
-    font-size: 18px;
-    /* background-color: blue; */
-
-    padding: 10px 8px;
-    min-width: 120px;
-/*
-  border-style: none;
-  border-width: 0px;
-  background-color: #E2B600;
-  color: #27348B;
-  font-family: "Source Sans Pro", Arial, sans-serif;
-  font-size: 16px;
-  height: 40px;
-  line-height: 20px;
-  vertical-align: middle;
-  margin-right: 6px;
-  box-sizing: border-box;
-  cursor: pointer;
-*/
-}
-
-/*table input[id*="TermsAndConditions"] {*/
-table input[type*="checkbox"] {
-    opacity: 1;
-}
-
-
-/* TODO: possibly generalise to all ... checkboxes, as above? */
-table tr[id*="TermsAndConditions"] > td:first-child {
-    padding-top: 8px;
-}
-
-
-
 
 div.form-device label.checkbox input {
     opacity: 0;
@@ -149,29 +63,14 @@ div.form-device label.checkbox input {
     position: absolute;
 }
 
-
-
-
-div.form-device label.checkbox:before, div.form-device label.radio:before {
+div.form-device label.checkbox:before,
+div.form-device label.radio:before {
     background-color: white;
-    border: 2px solid #dbdbdb; }
-
-
-
-
-table tr td.TableRowSplitter {
-    background-color: #F6F6F6;
-    padding-top: 18px;
-}
-table tr td.TableRowSplitter .TableRowSplitterText {
-    font-weight: 600;
-    color: #27348b !important;
-    font-size: 18px;
+    border: 2px solid #dbdbdb;
 }
 
-
-/* Unmodified select -> blue-backed drop-downs */
 select {
+    /* Unmodified select -> blue-backed drop-downs */
     color: white;
     border: 0;
     padding: 5px 35px 5px 5px;
@@ -187,14 +86,79 @@ select::-ms-expand {
     display: none;
 }
 
+/* Named areas and types */
+
+table tr td.TableRowSplitter {
+    background-color: #F6F6F6;
+    padding-top: 18px;
+}
+
+table tr td.TableRowSplitter .TableRowSplitterText {
+    font-weight: 600;
+    color: #27348b !important;
+    font-size: 18px;
+}
+
+div.form-device label.checkbox:before,
+div.form-device label.radio:before {
+    background-color: white;
+    border: 2px solid #dbdbdb;
+}
+
+table td input[type="text"] {
+    margin-bottom: 12px;
+}
+
+table input[type="checkbox"] {
+    opacity: 1;
+    top: 1px;
+    left: 0;
+    width: 12px;
+    height: 18px;
+}
+
+table tr > td[id*="_LeftCol_"] {
+    padding-top: 0px;
+}
+
+table tr td span[id$="Value"] {
+    /* padding-top: 12px; */
+    padding-top: 0px;
+    display: inline-block;
+    font-size: 17.775px;
+}
+
+div.form input[id*="Btn"] {
+    color: #27348B;
+    font-size: 17.775px;
+    padding: 10px 8px;
+    min-width: 120px;
+}
+
+/* Named-element-specific */
+
+table tr[id*="ChallengeAnswer"] td[align~="left"],
+
+table tr[id*="NewPassword"] td[align~="left"] {
+    padding-top: 18px;
+}
+
+table tr[id*="NewPassword"] td input[name*="NewPassword"] {
+    margin-bottom: 12px;
+}
+
+table tr[id*="TermsAndConditions"] > td:first-child {
+    /* TODO: possibly generalise to all ... checkboxes, as above? */
+    padding-top: 8px;
+}
+
+table input[id*="BtnSubmit"] {
+    color: #27348B;
+}
 
 /* Unmodified input 'submit' buttons -> add padding and arrow */
-
 div.form input[type="submit"] {
     /* border: 1px solid red; */
     padding: 10px 8px;
 }
-
-
-/* Disabled form elements */
 
