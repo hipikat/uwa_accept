@@ -41,14 +41,16 @@ div.width-full table {
     width: 100%;
 }
 
-table tr > *:first-child {
+table tr > td:first-child {
     font-size: 16px;
     padding-bottom: 18px;
 }
 
+/*
 table tr > *:last-child {
     font-size: 16px;
 }
+*/
 
 div.width-full table tr td:first-child {
     width: 30% !important;
@@ -73,7 +75,7 @@ select {
     /* Unmodified select -> blue-backed drop-downs */
     color: white;
     border: 0;
-    padding: 5px 35px 5px 5px;
+    padding: 5px 35px 5px 10px;
     font-size: 16px;
     height: 34px;
     -webkit-appearance: none;
@@ -132,9 +134,42 @@ table input[type="checkbox"] {
     height: 18px;
 }
 
+/* table tr td[align="left"] span:first-child,
+table tr td:not([align="left"]) span:first-child { */
+table tr td span:first-child {
+    display: inline-block;
+    margin-top: 8px;
+}
+
+/*
+table tr td select ~ span,
+table tr td select ~ ul li,
+table tr td input ~ span,
+table tr td input ~ ul li {
+    font-size: 80%;
+}
+*/
+
+table tr td:not([align="left"]) {
+    font-size: 100%;
+}
+
+
+table tr td br + span {
+    display: inline-block;
+    margin-top: 1em;
+}
+
+/*
 table tr > td[id*="_LeftCol_"] {
     padding-top: 0px;
 }
+
+table tr[id*="ChallengeAnswer"] td[align~="left"],
+table tr[id*="NewPassword"] td[align~="left"] {
+    padding-top: 18px;
+}
+*/
 
 table tr td span[id$="Value"] {
     /* padding-top: 12px; */
@@ -151,12 +186,6 @@ div.form input[id*="Btn"] {
 }
 
 /* Named-element-specific */
-
-table tr[id*="ChallengeAnswer"] td[align~="left"],
-
-table tr[id*="NewPassword"] td[align~="left"] {
-    padding-top: 18px;
-}
 
 table tr[id*="NewPassword"] td input[name*="NewPassword"] {
     margin-bottom: 12px;
