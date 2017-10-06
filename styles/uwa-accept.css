@@ -109,6 +109,12 @@ table td input[type="text"] {
     margin-bottom: 12px;
 }
 
+table td input[type="text"][disabled="disabled"] {
+    background-color: #dbdbdb;
+    color: #8f8f8f; 
+    cursor: default;
+}
+
 table input[type="checkbox"] {
     opacity: 1;
     top: 1px;
