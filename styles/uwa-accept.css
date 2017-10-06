@@ -47,7 +47,7 @@ table tr > *:first-child {
 }
 
 table tr > *:last-child {
-    font-size: 17.775px;
+    font-size: 16px;
 }
 
 div.width-full table tr td:first-child {
@@ -84,6 +84,15 @@ select {
 
 select::-ms-expand {
     display: none;
+}
+
+sup {
+    font-size: 80%;
+    vertical-align: top;
+    text-transform: lowercase;
+    display: inline-block;
+    position: relative;
+    top: -6px;
 }
 
 /* Named areas and types */
@@ -131,7 +140,7 @@ table tr td span[id$="Value"] {
     /* padding-top: 12px; */
     padding-top: 0px;
     display: inline-block;
-    font-size: 17.775px;
+    font-size: 16px;
 }
 
 div.form input[id*="Btn"] {
